@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> cronometro </title>
+        <style>
+            div{
+                text-align: center;
+             }
+
+            button{ 
+                height: 2.3em;
+                width: 5.5em;
+                border: none;
+                color: white;
+            }
+            .start{
+                background-color: green;
+            }
+            .pause{
+                background-color: grey;
+            }
+            .stop{
+                background-color: red;
+            }
+             body{
+    background-color: black;
+            }
+            h1{
+                color: white;
+            }
+            button:hover{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div>
+            <h1 id='counter'> 00:00</h1>
+        <button class="start" onclick="start()"> Iniciar</button>
+        <button class="pause" onclick="pause()"> Pausar</button>
+        <button class="stop" onclick="stop()"> Parar</button>
+    </div>
+    <script>
+function start(){
+ interval= setInterval(counter,1000)
+}
+function pause(){
+    clearInterval(interval)
+}
+function stop(){
+    clearInterval(interval)
+    sec=0
+    min=0
+    document.getElementById('counter').innerText='00:00'
+} 
+function counter(){
+    sec++
+    if(sec==60){
+        min++
+        sec=0
+    }
+    document.getElementById('counter').innerText=min+':'+sec
+}
+var interval  
+var sec=0
+var min=0
+    </script>
+    </body>
+</html>

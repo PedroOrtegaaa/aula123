@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a</title>
+</head>
+<body>
+    <p id="demo">JavaScript pode alterar o conteúdo HTML.</p>
+
+    <button type="button"
+    onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>
+    Click Me! </button>
+
+    <p>
+    <button onclick="document.getElementById('lampada').src='pic_bulbon.gif'">
+        Ligue a lâmpada</button>
+        <img id="lampada" src="pic_bulboff.gif" style="width:100px">
+        <button onclick="document.getElementById('lampada').src='pic_bulboff.gif'">
+        Desligue a lâmpada</button>
+    </p>
+
+    <p id="texto">JavaScript pode esconder elementos HTML .</p>
+
+<button type="button"
+onclick="document.getElementById('texto').style.display='none'">
+Click aqui para ocultar</button>
+<h2 id="valor"></h2>
+<p id="resultado"></p>
+<p id="hora"></p>
+<script>
+
+    var resultado = 20 * 2;
+    console.log(resultado);
+    document.write(resultado);
+    alert(resultado);
+    var valor = 40;
+    document.getElementById("valor").innerHTML = valor;
+    function subtrair(a, b) {
+        return a - b;
+    }
+    var resultado = subtrair(10, 5);
+    console.log(resultado);
+    function subtrair(a, b) {
+        var resultado = a - b;
+        document.getElementById("resultado").innerHTML = "O resultado é: " + resultado;
+    }
+    subtrair(10, 5)
+    
+    function verificarHorario() {
+  var hora = new Date().getHours();
+  var fraseElemento = document.getElementById("hora");
+
+  if (hora >= 0 && hora <= 9) {
+    fraseElemento.innerHTML = "Hora do café da manhã!";
+  } else if (hora > 9 && hora <= 13) {
+    fraseElemento.innerHTML = "Hora do almoço!";
+  } else if (hora > 13 && hora <= 18) {
+    fraseElemento.innerHTML = "Hora do café da tarde!";
+  } else {
+    fraseElemento.innerHTML = "Hora da janta";
+  }
+}
+
+verificarHorario();
+</script>
+</body>
+
+</html>
